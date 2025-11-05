@@ -4,7 +4,7 @@ import Header from "../../ui/Header";
 
 export default function Layout() {
     return (
-        <div className="min-h-screen flex flex-col justify-between">
+        <div className="min-h-screen flex flex-col justify-between bg-gray-700">
             <Header />
             <main className="flex-grow">
                 <Outlet />
