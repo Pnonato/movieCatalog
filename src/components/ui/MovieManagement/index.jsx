@@ -10,7 +10,7 @@ export default function MovieManagement({ type = "update", movie, setIsSearching
 
     const [isExecuting, setIsExecuting] = useState(false);
     const [name, setName] = useState("");
-    const [gender, setGender] = useState("");
+    const [genre, setGenre] = useState("");
     const [year, setYear] = useState("");
 
     async function updateMovie() {
@@ -32,7 +32,7 @@ export default function MovieManagement({ type = "update", movie, setIsSearching
 
             const data = {
                 name: name,
-                gender: gender,
+                genre: genre,
                 dateOfRelease: year,
             };
 
@@ -105,7 +105,7 @@ export default function MovieManagement({ type = "update", movie, setIsSearching
 
     const isValid = () => {
         if (!name) return false;
-        if (!gender) return false;
+        if (!genre) return false;
         if (!year) return false;
 
         return true;
@@ -127,8 +127,8 @@ export default function MovieManagement({ type = "update", movie, setIsSearching
                             movie={movie}
                             name={name}
                             setName={setName}
-                            gender={gender}
-                            setGender={setGender}
+                            genre={genre}
+                            setGenre={setGenre}
                             year={year}
                             setYear={setYear}
                         />
@@ -138,7 +138,7 @@ export default function MovieManagement({ type = "update", movie, setIsSearching
                                 <span className="font-semibold">Name:</span> {movie.name}
                             </p>
                             <p className="text-black text-[20px]">
-                                <span className="font-semibold">Gender:</span> {movie.gender}
+                                <span className="font-semibold">Genre:</span> {movie.genre}
                             </p>
                             <p className="text-black text-[20px]">
                                 <span className="font-semibold">Year:</span> {movie.dateOfRelease}

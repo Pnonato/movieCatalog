@@ -2,14 +2,14 @@ import { useCallback, useEffect } from "react";
 import DateInput from "../../ui/DateInput";
 import TextInput from "../../ui/TextInput";
 
-export default function MovieUpdateForm({ name, setName, gender, setGender, year, setYear, movie }) {
+export default function MovieUpdateForm({ name, setName, genre, setGenre, year, setYear, movie }) {
     useEffect(() => {
         setName(movie.name);
-        setGender(movie.gender);
+        setGenre(movie.genre);
         setYear(movie.dateOfRelease);
     }, []);
 
-    useEffect(() => {}, [name, gender, year]);
+    useEffect(() => {}, [name, genre, year]);
 
     const onChangeNameInput = useCallback(
         value => {
@@ -18,18 +18,18 @@ export default function MovieUpdateForm({ name, setName, gender, setGender, year
         [name]
     );
 
-    const onChangeGenderInput = useCallback(
+    const onChangeGenreInput = useCallback(
         value => {
-            setGender(value);
+            setGenre(value);
         },
-        [gender]
+        [genre]
     );
 
     const onChangeYearInput = useCallback(
         value => {
             setYear(value);
         },
-        [gender]
+        [genre]
     );
 
     return (
@@ -41,7 +41,7 @@ export default function MovieUpdateForm({ name, setName, gender, setGender, year
                     value={name}
                     onChange={onChangeNameInput}
                 />
-                <TextInput label="Gender" placeholder="Action" value={gender} onChange={onChangeGenderInput} />
+                <TextInput label="Genre" placeholder="Action" value={genre} onChange={onChangeGenreInput} />
                 <DateInput label="Year" value={year} onChange={onChangeYearInput} />
             </div>
         </form>

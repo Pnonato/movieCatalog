@@ -23,7 +23,7 @@ export default function MovieDetails() {
                         <span className="font-semibold">Name:</span> {movie.name}
                     </p>
                     <p className="text-black text-[20px]">
-                        <span className="font-semibold">Gender:</span> {movie.gender}
+                        <span className="font-semibold">Genre:</span> {movie.genre}
                     </p>
                     <p className="text-black text-[20px]">
                         <span className="font-semibold">Year:</span> {movie.dateOfRelease}

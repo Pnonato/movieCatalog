@@ -10,7 +10,7 @@ export default function CreateMovie() {
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
-    const [gender, setGender] = useState("");
+    const [genre, setGenre] = useState("");
     const [year, setYear] = useState("");
     const [isSubmiting, setIsSubmiting] = useState(false);
 
@@ -19,7 +19,7 @@ export default function CreateMovie() {
         try {
             const data = {
                 name: name,
-                gender: gender,
+                genre: genre,
                 dateOfRelease: year,
             };
 
@@ -78,23 +78,23 @@ export default function CreateMovie() {
         [name]
     );
 
-    const onChangeGenderInput = useCallback(
+    const onChangeGenreInput = useCallback(
         value => {
-            setGender(value);
+            setGenre(value);
         },
-        [gender]
+        [genre]
     );
 
     const onChangeYearInput = useCallback(
         value => {
             setYear(value);
         },
-        [gender]
+        [genre]
     );
 
     const isValid = () => {
         if (!name) return false;
-        if (!gender) return false;
+        if (!genre) return false;
         if (!year) return false;
 
         return true;
@@ -111,7 +111,7 @@ export default function CreateMovie() {
                         value={name}
                         onChange={onChangeNameInput}
                     />
-                    <TextInput label="Gender" placeholder="Action" value={gender} onChange={onChangeGenderInput} />
+                    <TextInput label="Genre" placeholder="Action" value={genre} onChange={onChangeGenreInput} />
                     <DateInput label="Year" value={year} onChange={onChangeYearInput} />
                     <div className="self-center flex gap-x-[24px] mb-[32px]">
                         <Button color="#fca5a5" onClick={navigateToHome}>
